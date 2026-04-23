@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Source') {
-            steps {
-                git 'https://github.com/your-username/my-app.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME:latest .'
