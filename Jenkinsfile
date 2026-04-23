@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "your-dockerhub-username/myapp"
+        IMAGE_NAME = "har4049/myapp"
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-token', variable: 'DOCKER_TOKEN')]) {
-                    sh 'echo $DOCKER_TOKEN | docker login -u your-dockerhub-username --password-stdin'
+                    sh 'echo $DOCKER_TOKEN | docker login -u har4049 --password-stdin'
                 }
             }
         }
